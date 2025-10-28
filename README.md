@@ -14,3 +14,11 @@ $ git checkout tags/5.0.0
 # Fire up Superset using Docker Compose
 $ docker compose -f docker-compose-image-tag.yml up
 
+
+
+# Restart:
+Open Docker first by:
+open -a Docker
+
+Start Superset again with:
+docker compose -f docker-compose-image-tag.yml up
