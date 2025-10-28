@@ -5,7 +5,7 @@ git clone https://github.com/apache/superset
 
 Followed by:
 
-## Enter the repository you just cloned
+### Enter the repository you just cloned
 $ cd superset
 
 ## Set the repo to the state associated with the latest official version
@@ -35,3 +35,22 @@ brew install postgresql
 
 ## PostgreSQL starten
 brew services start postgresql
+
+
+
+
+
+
+Per pgAdmin 4 mit postgresql verbunden und eine neue Tabelle angelegt:
+
+CREATE TABLE temphum (
+    date DATE,
+    temperature NUMERIC(5,2),
+    humidity NUMERIC(5,2),
+    abshumidity NUMERIC(6,2)
+);
+
+und diese nun mit einem CSV zum Test gefüttert:
+COPY temphum(date, temperature, humidity, abshumidity)
+FROM '/Volumes/ADATA/Studium/Data/Temphum/test.csv' 
+WITH (FORMAT CSV, HEADER TRUE, DELIMITER ',');
